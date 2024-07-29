@@ -20,12 +20,14 @@ public class SecurityConfig {
         httpSecurity.cors(c -> {
             CorsConfigurationSource source = request -> {
                 CorsConfiguration config = new CorsConfiguration();
-                config.setAllowedOrigins(
-                        List.of("http://localhost:8080")
-                );
-                config.setAllowedMethods(
-                        List.of("GET", "POST", "PUT", "DELETE")
-                );
+//                config.setAllowedOrigins(
+//                        List.of("http://localhost:8080")
+//                );
+//                config.setAllowedMethods(
+//                        List.of("GET", "POST", "PUT", "DELETE")
+//                );
+                config.setAllowedOrigins(List.of("*"));
+                config.setAllowedMethods(List.of("*"));
                 return config;
             };
             c.configurationSource(source);
